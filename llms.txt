@@ -1,0 +1,19 @@
+# @three-ws/react
+
+> React components for embedding three.ws 3D AI agents
+
+@three-ws/react is a JavaScript library from three.ws. Install: `npm install @three-ws/react`.
+
+## Docs
+
+- [README](https://github.com/nirholas/three-ws-react/blob/main/README.md): install, configuration, full reference
+- [Documentation site](https://nirholas.github.io/three-ws-react/): the README as a web page
+- [Full text for LLMs](https://nirholas.github.io/three-ws-react/llms-full.txt): README inlined
+- [AGENTS.md](https://github.com/nirholas/three-ws-react/blob/main/AGENTS.md): guidance for coding agents
+
+## Project
+
+- [Source](https://github.com/nirholas/three-ws-react)
+- [npm](https://www.npmjs.com/package/@three-ws/react)
+- [three.ws](https://three.ws): the platform this is part of
+- [Issues](https://github.com/nirholas/three-ws-react/issues)

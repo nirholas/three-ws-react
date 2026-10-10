@@ -1,0 +1,5 @@
+# Source is shipped (src/) for sourcemap + reference; everything else excluded.
+node_modules
+vite.config.js
+.DS_Store
+*.log

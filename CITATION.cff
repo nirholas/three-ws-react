@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it as below.
+title: "@three-ws/react"
+abstract: "React components for embedding three.ws 3D AI agents"
+version: 1.0.3
+license: Apache-2.0
+repository-code: "https://github.com/nirholas/three-ws-react"
+url: "https://three.ws"
+authors:
+  - name: three.ws
+    website: "https://three.ws"

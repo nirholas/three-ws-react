@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>@three-ws/react: React components for embedding three.ws 3D AI agents</title>
+<meta name="description" content="React components for embedding three.ws 3D AI agents">
+<link rel="canonical" href="https://nirholas.github.io/three-ws-react/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="three.ws">
+<meta property="og:title" content="@three-ws/react">
+<meta property="og:description" content="React components for embedding three.ws 3D AI agents">
+<meta property="og:url" content="https://nirholas.github.io/three-ws-react/">
+<meta property="og:image" content="https://nirholas.github.io/three-ws-react/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="@three-ws/react">
+<meta name="twitter:description" content="React components for embedding three.ws 3D AI agents">
+<meta name="twitter:image" content="https://nirholas.github.io/three-ws-react/og.png">
+<meta name="keywords" content="three.ws, 3d, ai-agent, react, embed, avatar, walk, ai-agents">
+<link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt">
+<link rel="icon" href="https://three.ws/three-ws-mcp-icon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"@three-ws/react","description":"React components for embedding three.ws 3D AI agents","codeRepository":"https://github.com/nirholas/three-ws-react","programmingLanguage":"JavaScript","license":"https://spdx.org/licenses/Apache-2.0.html","version":"1.0.3","url":"https://nirholas.github.io/three-ws-react/","author":{"@type":"Organization","name":"three.ws","url":"https://three.ws"},"keywords":"three.ws, 3d, ai-agent, react, embed, avatar, walk, ai-agents"}</script>
+<style>:root{--bg:#fff;--fg:#111418;--mut:#586069;--line:#e3e6ea;--acc:#2563eb;--code:#f4f6f8;--card:#fafbfc}
+@media(prefers-color-scheme:dark){:root{--bg:#0b0d10;--fg:#e8eaed;--mut:#9aa3ad;--line:#232830;--acc:#6ea0ff;--code:#14181d;--card:#10141a}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:4px}
+header.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-weight:700;text-decoration:none;color:var(--fg)}
+.bar nav{margin-left:auto;display:flex;gap:16px;font-size:14px}
+.bar nav a{color:var(--mut);text-decoration:none;transition:color .15s}.bar nav a:hover{color:var(--fg)}
+.hero{max-width:1100px;margin:0 auto;padding:48px 16px 24px}
+.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em}
+.hero p{color:var(--mut);max-width:70ch;font-size:18px;margin:0 0 24px}
+.install{display:flex;align-items:center;gap:8px;max-width:620px;background:var(--code);border:1px solid var(--line);border-radius:10px;padding:6px 6px 6px 14px}
+.install code{flex:1;overflow-x:auto;white-space:nowrap;font:14px ui-monospace,SFMono-Regular,Menlo,monospace}
+.install button{border:0;background:var(--acc);color:#fff;border-radius:7px;padding:8px 14px;font:600 13px system-ui;cursor:pointer;transition:transform .12s,opacity .12s}
+.install button:hover{opacity:.9}.install button:active{transform:scale(.96)}
+.cta{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.cta a{padding:9px 16px;border:1px solid var(--line);border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;color:var(--fg);transition:border-color .15s,transform .15s}
+.cta a:hover{border-color:var(--acc);transform:translateY(-1px)}.cta a.pri{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.layout{max-width:1100px;margin:0 auto;padding:8px 16px 64px;display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:40px}
+@media(max-width:860px){.layout{grid-template-columns:minmax(0,1fr)}.toc{display:none}}
+.toc{position:sticky;top:76px;align-self:start;font-size:14px;border-left:1px solid var(--line);padding-left:16px}
+.toc p{margin:0 0 8px;font-weight:700;color:var(--mut);text-transform:uppercase;font-size:12px;letter-spacing:.06em}
+.toc ul{list-style:none;margin:0;padding:0}.toc li{margin:6px 0}.toc a{color:var(--mut);text-decoration:none}.toc a:hover{color:var(--fg)}
+main{min-width:0;overflow-wrap:anywhere}main pre code{overflow-wrap:normal}main img{max-width:100%;height:auto}
+main h2{margin-top:2.2em;padding-bottom:.3em;border-bottom:1px solid var(--line)}
+.anchor{margin-left:-1.1em;padding-right:.4em;text-decoration:none;opacity:0;color:var(--mut)}h2:hover .anchor,h3:hover .anchor,h4:hover .anchor{opacity:1}
+pre{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto;font-size:14px;line-height:1.5}
+code{font:0.9em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--code);padding:.15em .35em;border-radius:5px}pre code{background:none;padding:0}
+table{border-collapse:collapse;display:block;overflow-x:auto;max-width:100%}th,td{border:1px solid var(--line);padding:8px 12px;text-align:left}th{background:var(--card)}
+blockquote{margin:1em 0;padding:.2em 1em;border-left:4px solid var(--line);color:var(--mut)}
+footer{border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+.foot-in{max-width:1100px;margin:0 auto;padding:24px 16px;display:flex;gap:16px;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in">
+<a class="brand" href="https://nirholas.github.io/three-ws-react/">@three-ws/react</a>
+<nav aria-label="Project links"><a href="https://github.com/nirholas/three-ws-react">GitHub</a><a href="https://www.npmjs.com/package/@three-ws/react">npm</a><a href="llms.txt">llms.txt</a><a href="https://three.ws">three.ws</a></nav>
+</div></header>
+<section class="hero">
+<h1>@three-ws/react</h1>
+<p>React components for embedding three.ws 3D AI agents</p>
+<div class="install" role="group" aria-label="Install command"><code>npm install @three-ws/react</code><button type="button" data-copy="npm install @three-ws/react">Copy</button></div>
+<div class="cta"><a class="pri" href="https://github.com/nirholas/three-ws-react">View on GitHub</a><a href="https://github.com/nirholas/three-ws-react/stargazers">Star the repo</a></div>
+</section>
+<div class="layout">
+<main id="content"><h1>@three-ws/react</h1>
+<p>React components for embedding <a href="https://three.ws">three.ws</a> 3D AI agents. Drop a
+walking 3D avatar into any React app in two lines: no Three.js, no WebGL setup,
+no build config. The 3D runtime lives inside three.ws and renders through a
+sandboxed iframe.</p>
+<pre><code class="language-bash">npm install @three-ws/react
+</code></pre>
+<h2 id="quick-start"><a class="anchor" href="#quick-start" aria-label="Link to this section">#</a>Quick start</h2>
+<pre><code class="language-jsx">import { Agent3D } from &#39;@three-ws/react&#39;;
+
+export default function Page() {
+  return &lt;Agent3D agentId=&quot;your-agent-id&quot; controls=&quot;joystick&quot; /&gt;;
+}
+</code></pre>
+<p>That&#39;s it. <code>&lt;Agent3D&gt;</code> renders a responsive 3D viewer (default <code>100%</code> × <code>600px</code>)
+that loads your agent&#39;s avatar and lets visitors walk it around.</p>
+<p><code>WalkEmbed</code> is exported as an alias of <code>Agent3D</code> for backwards compatibility:</p>
+<pre><code class="language-jsx">import { WalkEmbed } from &#39;@three-ws/react&#39;;
+</code></pre>
+<h2 id="lifecycle-imperative-control"><a class="anchor" href="#lifecycle-imperative-control" aria-label="Link to this section">#</a>Lifecycle &amp; imperative control</h2>
+<pre><code class="language-jsx">import { useRef } from &#39;react&#39;;
+import { Agent3D } from &#39;@three-ws/react&#39;;
+
+export function Avatar() {
+  const ref = useRef(null);
+
+  return (
+    &lt;Agent3D
+      ref={ref}
+      agentId=&quot;your-agent-id&quot;
+      controls=&quot;joystick&quot;
+      width={480}
+      height={720}
+      onLoad={() =&gt; console.log(&#39;scene ready&#39;)}
+      onError={(err) =&gt; console.error(err)}
+    /&gt;
+  );
+}
+
+// Later, drive the live embed:
+ref.current.setMotion(&#39;walk&#39;);     // &#39;idle&#39; | &#39;walk&#39; | &#39;run&#39;
+ref.current.setAvatar(&#39;av-1234&#39;);  // swap avatar live
+ref.current.setSpeed(1.5);         // walk-speed multiplier (0.3-3)
+ref.current.narrate(&#39;Hi there!&#39;);  // speech bubble over the avatar
+ref.current.setEnvironment(&#39;studio&#39;);
+ref.current.resetPose();
+</code></pre>
+<h2 id="props"><a class="anchor" href="#props" aria-label="Link to this section">#</a>Props</h2>
+<table>
+<thead>
+<tr>
+<th>Prop</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>agentId</code></td>
+<td><code>string</code> (required)</td>
+<td>n/a</td>
+<td>The three.ws agent ID whose avatar is rendered.</td>
+</tr>
+<tr>
+<td><code>avatarId</code></td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td>Override the agent&#39;s default avatar.</td>
+</tr>
+<tr>
+<td><code>baseUrl</code></td>
+<td><code>string</code></td>
+<td><code>&quot;https://three.ws&quot;</code></td>
+<td>Embed origin (self-hosted / staging players).</td>
+</tr>
+<tr>
+<td><code>controls</code></td>
+<td><code>&quot;joystick&quot; | &quot;keyboard&quot; | &quot;none&quot;</code></td>
+<td><code>&quot;joystick&quot;</code></td>
+<td>Movement controls.</td>
+</tr>
+<tr>
+<td><code>background</code></td>
+<td><code>string</code></td>
+<td>transparent</td>
+<td><code>&quot;transparent&quot;</code> or a hex color like <code>&quot;#1b1b1b&quot;</code>.</td>
+</tr>
+<tr>
+<td><code>environment</code></td>
+<td><code>string</code></td>
+<td><code>&quot;studio&quot;</code></td>
+<td>Environment preset.</td>
+</tr>
+<tr>
+<td><code>autoplay</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Autoplay an idle walk loop.</td>
+</tr>
+<tr>
+<td><code>ground</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>Show the shadow ground disc.</td>
+</tr>
+<tr>
+<td><code>orbit</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>Allow orbit drag on desktop.</td>
+</tr>
+<tr>
+<td><code>speed</code></td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>Walk-speed multiplier (0.3-3), applied once ready.</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td><code>string | number</code></td>
+<td><code>&quot;100%&quot;</code></td>
+<td>Container width (number → px).</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td><code>string | number</code></td>
+<td><code>&quot;600px&quot;</code></td>
+<td>Container height (number → px).</td>
+</tr>
+<tr>
+<td><code>onLoad</code></td>
+<td><code>() =&gt; void</code></td>
+<td>n/a</td>
+<td>Fires when the 3D scene is ready.</td>
+</tr>
+<tr>
+<td><code>onError</code></td>
+<td><code>(err: Error) =&gt; void</code></td>
+<td>n/a</td>
+<td>Fires on load failure.</td>
+</tr>
+<tr>
+<td><code>className</code></td>
+<td><code>string</code></td>
+<td>n/a</td>
+<td>CSS class on the wrapper <code>&lt;div&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>style</code></td>
+<td><code>React.CSSProperties</code></td>
+<td>n/a</td>
+<td>Inline styles on the wrapper <code>&lt;div&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>three.ws title</td>
+<td>Accessible title for the underlying iframe.</td>
+</tr>
+</tbody></table>
+<h3 id="imperative-handle-via-ref"><a class="anchor" href="#imperative-handle-via-ref" aria-label="Link to this section">#</a>Imperative handle (via <code>ref</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>sendMessage(msg)</code></td>
+<td>Post an arbitrary message to the embed.</td>
+</tr>
+<tr>
+<td><code>setAvatar(id)</code></td>
+<td>Swap the rendered avatar live.</td>
+</tr>
+<tr>
+<td><code>setMotion(motion)</code></td>
+<td><code>&quot;idle&quot; | &quot;walk&quot; | &quot;run&quot;</code>.</td>
+</tr>
+<tr>
+<td><code>setEnvironment(env)</code></td>
+<td>Switch the environment preset live.</td>
+</tr>
+<tr>
+<td><code>setSpeed(value)</code></td>
+<td>Set the walk-speed multiplier (0.3-3).</td>
+</tr>
+<tr>
+<td><code>narrate(text)</code></td>
+<td>Show a speech bubble above the avatar.</td>
+</tr>
+<tr>
+<td><code>resetPose()</code></td>
+<td>Recenter the avatar on the ground.</td>
+</tr>
+<tr>
+<td><code>iframe</code></td>
+<td>The underlying <code>HTMLIFrameElement</code> (or null).</td>
+</tr>
+</tbody></table>
+<h2 id="security"><a class="anchor" href="#security" aria-label="Link to this section">#</a>Security</h2>
+<p>Inbound <code>postMessage</code> events are accepted <strong>only</strong> from the three.ws origin and
+<strong>only</strong> from this component&#39;s own iframe; messages from any other origin or
+window are ignored. This is enforced regardless of which <code>onLoad</code>/<code>onError</code>
+handlers you pass.</p>
+<h2 id="typescript"><a class="anchor" href="#typescript" aria-label="Link to this section">#</a>TypeScript</h2>
+<p>Types ship with the package (<code>Agent3DProps</code>, <code>Agent3DHandle</code>, <code>Agent3DControls</code>).
+No <code>@types</code> install needed.</p>
+<h2 id="requirements"><a class="anchor" href="#requirements" aria-label="Link to this section">#</a>Requirements</h2>
+<p><code>react</code> and <code>react-dom</code> <code>&gt;= 17</code> are peer dependencies; the package never bundles
+its own React.</p>
+<h2 id="links"><a class="anchor" href="#links" aria-label="Link to this section">#</a>Links</h2>
+<ul>
+<li>Full docs: <a href="https://three.ws/docs">https://three.ws/docs</a></li>
+<li>Live embed configurator: <a href="https://three.ws/embed/walk">https://three.ws/embed/walk</a></li>
+<li>Live player: <a href="https://three.ws/walk-embed">https://three.ws/walk-embed</a></li>
+</ul>
+<h2 id="license"><a class="anchor" href="#license" aria-label="Link to this section">#</a>License</h2>
+<p>Apache-2.0. See <a href="https://github.com/nirholas/three-ws-react/blob/main/LICENSE">LICENSE</a>.</p>
+</main>
+<nav class="toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#quick-start">Quick start</a></li><li><a href="#lifecycle-imperative-control">Lifecycle &amp; imperative control</a></li><li><a href="#props">Props</a></li><li><a href="#security">Security</a></li><li><a href="#typescript">TypeScript</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#links">Links</a></li><li><a href="#license">License</a></li></ul></nav>
+</div>
+<footer><div class="foot-in"><span>Apache-2.0 licensed</span><a href="https://github.com/nirholas/three-ws-react/issues">Issues</a><a href="https://github.com/nirholas/three-ws-react/blob/main/CONTRIBUTING.md">Contributing</a><a href="https://github.com/nirholas/three-ws-react/security/policy">Security</a><a href="https://three.ws">Part of three.ws</a></div></footer>
+<script>document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+var t=b.getAttribute('data-copy');var done=function(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1400)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){})}
+else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){}a.remove()}})});</script>
+</body>
+</html>
