@@ -6,6 +6,7 @@
     "name": "nirholas"
   },
   "repository": "https://github.com/nirholas/three-ws-react",
+  "homepage": "https://nirholas.github.io/three-ws-react/",
   "license": "Apache-2.0",
   "keywords": [
     "react",
@@ -13,6 +14,5 @@
     "avatar",
     "3d",
     "three-ws"
-  ],
-  "homepage": "https://nirholas.github.io/three-ws-react/"
+  ]
 }
